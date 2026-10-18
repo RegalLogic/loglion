@@ -7,8 +7,8 @@ contact_links:
     url: https://github.com/RegalLogic/loglion/discussions
     about: Ideas that aren't a specific request yet, and filters, color schemes and Lua scripts to share.
   - name: Licenses, purchases and refunds
-    url: mailto:contact@regallogic.com
-    about: Anything about your account or order. Please don't post license files or order numbers here.
+    url: https://www.regallogic.com/contact/contact.html
+    about: Email contact@regallogic.com about your license or order. Please don't post license files or order numbers here.
   - name: Report a security vulnerability
     url: https://github.com/RegalLogic/loglion/security/advisories/new
     about: Report it privately, please, not as an issue.
