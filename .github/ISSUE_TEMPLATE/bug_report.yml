@@ -1,0 +1,105 @@
+name: Bug report
+description: Something in Log Lion doesn't work the way it should, or it crashed.
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. Please search the [existing issues](https://github.com/RegalLogic/loglion/issues) first; if it's there, add a 👍 and any new details.
+
+        **This issue will be public.** Don't paste log lines, screenshots or file names containing anything private. For a security vulnerability, see [SECURITY.md](https://github.com/RegalLogic/loglion/blob/main/SECURITY.md) instead.
+  - type: input
+    id: version
+    attributes:
+      label: Log Lion version
+      description: From Help ▸ About.
+      placeholder: "3.1.3"
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Installed from
+      options:
+        - Microsoft Store
+        - MSI installer
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: From Settings ▸ System ▸ About, or `winver`.
+      placeholder: "Windows 11 24H2, build 26100"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Where does the problem show up?
+      options:
+        - Opening or reading a log
+        - Live logs, refresh or following
+        - Finding or navigating
+        - Filtering or the filter language
+        - Coloring or highlighting
+        - Timeline or range
+        - Analysis tools (histogram, subtotals, statistics, ...)
+        - Scripts
+        - Exporting or copying
+        - An extension (Docker, Splunk, Grafana MCP, or other)
+        - Installing, upgrading or licensing
+        - Settings, toolbars or panes
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: log-type
+    attributes:
+      label: Kind of log
+      description: The format or file extension, and roughly how large.
+      placeholder: "Security .evtx, 2 GB"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Apply the filter ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+      description: Include any error message exactly as shown. For a crash, say what you were doing when it happened.
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Sample and screenshots
+      description: A few lines of the log that show the problem, with anything sensitive replaced, and screenshots if it's something you can see. Drag files here to attach them.
+  - type: textarea
+    id: extensions
+    attributes:
+      label: Extensions installed
+      description: From Tools ▸ Extensions, if the problem might involve one.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched the existing issues and this hasn't been reported.
+          required: true
+        - label: Nothing I've posted here is private.
+          required: true

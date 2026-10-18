@@ -1,0 +1,43 @@
+name: Extension request
+description: Ask for an extension that reads logs from a system or service, like Docker, Splunk or Grafana MCP.
+labels: ["extension", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Extensions let Log Lion read logs where they live: a container engine, a log search service, a database. Tell us what you'd want to connect to.
+
+        For custom work for your organization, you can also email [sales@regallogic.com](mailto:sales@regallogic.com).
+  - type: input
+    id: system
+    attributes:
+      label: System or service
+      placeholder: "Elasticsearch / OpenSearch"
+    validations:
+      required: true
+  - type: dropdown
+    id: hosting
+    attributes:
+      label: Where does it run?
+      multiple: true
+      options:
+        - On the same machine
+        - On our own servers
+        - In the cloud, managed by a vendor
+  - type: textarea
+    id: use
+    attributes:
+      label: What you'd do with it
+      description: What you'd look for, how far back you'd read, and whether you'd follow it live.
+    validations:
+      required: true
+  - type: textarea
+    id: access
+    attributes:
+      label: How you sign in to it
+      description: For example an API token, single sign-on in a browser, or a user name and password. No real credentials, please.
+  - type: textarea
+    id: today
+    attributes:
+      label: What you use today
+      description: How you read these logs now, and what's missing.

@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest something Log Lion should do, or do better.
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search the [existing issues](https://github.com/RegalLogic/loglion/issues?q=label%3Aenhancement) first. If your idea is there, add a 👍; we sort by votes when planning.
+
+        To ask for a new log format, use the [log format form](https://github.com/RegalLogic/loglion/issues/new?template=log_format.yml) instead.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the task or investigation, and what gets in the way today.
+      placeholder: When I'm working through a Security log, I want to ... but I have to ...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would help
+      description: How you imagine it working. Mockups and examples from other tools are welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you do now
+      description: Any workaround you use today, such as a filter, a script, or another tool.
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who would use it?
+      multiple: true
+      options:
+        - Me
+        - My team
+        - My whole organization
+  - type: input
+    id: version
+    attributes:
+      label: Log Lion version
+      description: From Help ▸ About.
+      placeholder: "3.1.3"

@@ -1,0 +1,22 @@
+name: Documentation
+description: Something in the help or these docs is wrong, missing, or unclear.
+labels: ["documentation", "triage"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: A link to the page in docs/, or the help topic's title.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong or missing
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording
+      description: Optional.

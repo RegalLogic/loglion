@@ -1,0 +1,49 @@
+name: Log format request
+description: Ask Log Lion to read a log format it doesn't understand yet.
+labels: ["log format", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Many text formats can already be read with the [Import Text Log Wizard](https://github.com/RegalLogic/loglion/blob/main/docs/log-types-text-log-wizard.md) or a [custom parsed file](https://github.com/RegalLogic/loglion/blob/main/docs/log-types-custom-parsed.md). If one of those almost works, tell us where it falls short.
+
+        **This issue will be public.** Use sample lines with anything private replaced.
+  - type: input
+    id: name
+    attributes:
+      label: Format
+      description: The product or standard that writes it, and its usual file extension.
+      placeholder: "Apache Tomcat catalina.out"
+    validations:
+      required: true
+  - type: input
+    id: spec
+    attributes:
+      label: Specification
+      description: A link to a description of the format, if there is one.
+  - type: textarea
+    id: sample
+    attributes:
+      label: Sample
+      description: Ten or more lines, including any unusual ones such as multi-line entries or headers. For a binary format, attach a small file.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: columns
+    attributes:
+      label: Columns you'd want
+      description: How you'd like the entries split, such as time, level, thread and message, and anything nested you'd want as its own column.
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you tried
+      description: Did you try the wizard or a custom parsed file? Where did it fall short?
+  - type: dropdown
+    id: size
+    attributes:
+      label: Typical size
+      options:
+        - Under 100 MB
+        - 100 MB to 1 GB
+        - Over 1 GB
