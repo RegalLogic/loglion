@@ -37,6 +37,7 @@
 | **Autosave Filters**, **Filter File** | Whether filters are saved automatically, and which filter file loads at startup. See [Filtering](filtering.md). |
 | **Prompt for Variables** | Ask for the value of a `%variable` when a filter that uses one is applied. |
 | **Show Stats** | Report entries per second and timing after a filter or a tool runs. Worth turning on while tuning a slow filter or a [script](scripts.md). |
+| **Left-to-Right AND/OR** | Take AND and OR from left to right, as Log Lion did before version 3.1.4, so `a OR b AND c` means `(a OR b) AND c`. Off by default: AND binds tighter than OR. See [Boolean Expression Language](filter-language.md). |
 | **Max Processing Stages** | How many worker threads filtering may use. It defaults to the number of processors, which is the right answer almost always. Lower it only to leave headroom for something else running on the machine. |
 
 ## Per-format settings

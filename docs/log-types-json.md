@@ -18,7 +18,7 @@ Both formats are widely adopted across modern logging ecosystems: OpenTelemetry,
 
 ## Columns
 
-Columns are discovered dynamically from the JSON content. Each unique key found across the sampled entries becomes a column. Nested objects are represented with dot-separated key paths (e.g., `context.userId`) up to the configured **Nested Depth Limit**. Array elements appear as `key[0]`, `key[1]`, and so on.
+Columns are discovered dynamically from the JSON content. Each unique key found across the sampled entries becomes a column. Nested objects are represented with dot-separated key paths (e.g., `context.userId`) up to the configured **Nested Depth Limit**. Array elements appear as `key[0]`, `key[1]`, and so on. A `null` value is an empty cell, as a missing key is, so a filter such as `$status >= 500` passes it by. Inside a nested value shown as text it stays `null`.
 
 ## Properties
 

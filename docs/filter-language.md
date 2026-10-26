@@ -62,7 +62,13 @@ Logical operators always evaluate to a boolean *true* or *false* value. They all
 |  NOT |  ! |  Logical negation unary operator. |
 | not | ! | Logical negation unary operator. |
 
-`error AND NOT ("false positives" || system)`  #### Unary AND
+`error AND NOT ("false positives" || system)`  #### Which comes first
+
+AND binds tighter than OR, as it does in most languages: `a OR b AND c` means `a OR (b AND c)`, and `a AND b OR c` means `(a AND b) OR c`. Words side by side are an AND and bind the same way, so `timeout OR refused retry` finds entries with *timeout*, and entries with both *refused* and *retry*. NOT applies to the one condition after it. Parentheses always decide.
+
+Before version 3.1.4, AND and OR were taken from left to right, so `a OR b AND c` meant `(a OR b) AND c`. A filter written that way can be given parentheses, or *View\Settings\Filters\Left-to-Right AND/OR* brings back the old reading for every filter.
+
+#### Unary AND
 
 The AND operator may also preceede a BEL expression to effect the default logical operation when combining with other BEL expressions. Normally, if two BEL expressions were to be combined the logical OR operation would be employed. However, this is sometimes undesired especially if an expression is going to be used for exclusion. To get a logical AND operation employed, begin the expression with the unary AND operator. If the expression is not combined with others and is therefore evaluated singularly, then the unary AND operator has no effect.
 
@@ -103,6 +109,18 @@ All regular expressions are based on the ECMAScript standard which has a similar
 Regular expressions can be used with user variables to make it convenient to specify single or multiple values. Grouping with the alteration pipe operator *|* can be used to delimit a list of IDs to match. For example:
 
 `$(Event ID) =~ %(Event IDs)`  will allow you to set *%(Event IDs)* to match a single value such as *26048* or a list of ids such as *(26048|100|9013|9010|8224)*
+
+#### An attribute on its own
+
+An attribute variable by itself is true when it has a value: `$User` finds the entries whose User column isn't empty, and `$Error AND NOT $Retry` those with an error and no retry. It needs AND or OR beside it, not just a space, so that a misspelled operator is reported rather than searched for.
+
+#### Sets and ranges
+
+`in` tests an attribute against a set of values: `$Status in {200 304 404}`, or with ranges of whole numbers, both ends included: `$Status in {500..599}`. Members can be numbers, hex numbers (`0x1f`), quoted text (`$Level in {"Error" "Fatal"}`, where case counts as it does with `==`) or true and false, separated by spaces or commas. An empty value is in no range. Without the braces, *in* is an ordinary word to search for.
+
+#### Bit masks
+
+`&` masks a whole number: `$Flags & 0x02` is true when that bit is set, and `$Flags & 0x0f == 4` compares the masked value. A value that isn't a whole number has no bits set.
 
 ### Arithmetic Operators
 
