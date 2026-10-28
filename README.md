@@ -85,7 +85,7 @@ Log Lion. Good places to start:
 - [Filtering](docs/filtering.md) and the [filter language](docs/filter-language.md), with [samples](docs/filter-samples.md)
 - [Keyboard Shortcuts](docs/keyboard-shortcuts.md)
 - [Deploying Log Lion in an organization](docs/deployment.md)
-- [Revision History](docs/revision-history.md)
+- [What's new](https://www.regallogic.com/whats-new/whats-new.html), on our website
 
 ## Feedback and support
 

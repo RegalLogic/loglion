@@ -53,7 +53,6 @@ This is Log Lion's user guide, the same help you get by pressing F1 in Log Lion.
   - [Toolbars and Panes](toolbars-and-panes.md)
   - [Where Log Lion Keeps Your Data](data-folder.md)
 - [Privacy Policy](privacy-policy.md)
-- [Revision History](revision-history.md)
 
 ## For administrators
 

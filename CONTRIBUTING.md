@@ -28,8 +28,8 @@ Every new issue is labeled **triage** until we've read it. We then label it and 
 - **duplicate**: closed with a link to the issue it duplicates;
 - **not planned**: closed with an explanation.
 
-When a fix or feature ships, we close the issue and the
-[revision history](docs/revision-history.md) says which release it's in.
+When a fix or feature ships, we close the issue, and
+[What's new](https://www.regallogic.com/whats-new/whats-new.html) on our website lists it.
 
 ## Code of conduct
 
